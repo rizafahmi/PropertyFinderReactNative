@@ -10,25 +10,36 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  NavigatorIOS,
   View
 } from 'react-native';
+
+import SearchPage from './SearchPage.js'
 
 export default class PropertyFinder extends Component {
   render() {
     return (
-      <Text style={styles.text}>
-        Welcome to React Native!
-      </Text>
+      <NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Property Finder',
+          component: SearchPage
+        }} />
+    );
+  }
+}
+
+class HelloWorld extends Component {
+  render() {
+    return (
+      <Text style={styles.text}>Hello, Bandung! (Again)</Text>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flex: 1
   },
   welcome: {
     fontSize: 20,
